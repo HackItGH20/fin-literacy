@@ -2,7 +2,6 @@ import React from 'react'
 
 export const SingleResource = props => {
   const resource = props.resource
-  console.log('this is my resource', resource)
 
   return (
     <div>

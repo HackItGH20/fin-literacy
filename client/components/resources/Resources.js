@@ -34,9 +34,9 @@ export class Resources extends React.Component {
           {this.state.resources.map(resource => {
             return (
               <div id="resource-link" key={resource.id}>
-                <Link onClick={() => this.handleClick(resource.id)}>
+                <div onClick={() => this.handleClick(resource.id)}>
                   {resource.name}
-                </Link>
+                </div>
               </div>
             )
           })}
