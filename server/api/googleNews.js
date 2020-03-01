@@ -10,7 +10,6 @@ router.get('/', async (req, res, next) => {
       q: 'financial',
       language: 'en'
     })
-    console.log('api call results', finLiteracy)
     res.json(finLiteracy)
   } catch (err) {
     next(err)
