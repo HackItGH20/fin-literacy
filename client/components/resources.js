@@ -10,7 +10,6 @@ export function Resources(props) {
           <div id="resource-link" onClick={ResourceExpanded}>
             mint
           </div>
-
           <div id="resource-link">doctor of credit</div>
           <div id="resource-link">clarity</div>
           <div id="resource-link">another</div>
