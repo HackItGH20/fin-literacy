@@ -7,9 +7,7 @@ export function Resources(props) {
     <div id="resource-container">
       <div id="list">
         <ul>
-          <div id="resource-link" onClick={ResourceExpanded}>
-            mint
-          </div>
+          <div id="resource-link">mint</div>
 
           <div id="resource-link">doctor of credit</div>
           <div id="resource-link">clarity</div>
@@ -18,7 +16,18 @@ export function Resources(props) {
         </ul>
       </div>
 
-      <div id="expand">more info here hello</div>
+      <div id="expand">
+        <p>
+          description description descriptiondescription description description
+          description description{' '}
+        </p>
+        <ul>
+          <li>mobile app</li>
+          <li>budget overview?</li>
+          <li>another thing</li>
+        </ul>
+        <a href="htpp://mint.com">link to go to website</a>
+      </div>
     </div>
   )
 }
