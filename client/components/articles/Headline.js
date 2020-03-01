@@ -23,7 +23,9 @@ class Headline extends React.Component {
           />
         )}
         <div className="headline_text">
-          <h3 onClick={() => this.changeView()}>{this.props.article.title}</h3>
+          <h3 className="headline_title" onClick={() => this.changeView()}>
+            {this.props.article.title}
+          </h3>
           {this.props.article.author && <h4>By {this.props.article.author}</h4>}
           <h4>Source: {this.props.article.source.name}</h4>
           <h4>Published on: {this.props.article.publishedAt.slice(0, 10)}</h4>
