@@ -1,8 +1,5 @@
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
-// import PropTypes from 'prop-types'
-// import {connect} from 'react-redux'
-// import {logout} from '../store'
 
 function Navbar(props) {
   return (
