@@ -2,6 +2,7 @@ const router = require('express').Router()
 module.exports = router
 
 router.use('/users', require('./users'))
+router.use('/resources', require('./resources'))
 router.use('/newsAPI', require('./googleNews'))
 
 router.use((req, res, next) => {
