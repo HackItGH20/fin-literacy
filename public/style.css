@@ -38,17 +38,14 @@ a:hover {
 #resource-container {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
 }
 
 #list {
-  border: 1px solid blue;
   width: 50%;
 }
 
 #expand {
   align-self: center;
-  border: 1px solid red;
   width: 50%;
 }
 

@@ -8,7 +8,6 @@ class SingleArticle extends React.Component {
     }
   }
   render() {
-    console.log(this.state.article)
     return (
       <div>
         <h3>

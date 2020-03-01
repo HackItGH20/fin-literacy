@@ -1,6 +1,6 @@
 import React from 'react'
 import {Route, Link, BrowserRouter as Router} from 'react-router-dom'
-import {Resources} from './resources'
+import {Resources} from './resources/Resources'
 // import PropTypes from 'prop-types'
 // import {connect} from 'react-redux'
 // import {logout} from '../store'
