@@ -11,6 +11,16 @@ a:hover {
   color: rgb(30, 114, 163);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: 'Maven Pro';
+}
+
 #main {
   display: flex;
   flex-direction: column;
@@ -38,17 +48,14 @@ a:hover {
 #resource-container {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
 }
 
 #list {
-  border: 1px solid blue;
   width: 50%;
 }
 
 #expand {
   align-self: center;
-  border: 1px solid red;
   width: 50%;
 }
 
@@ -62,4 +69,42 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+#news_header {
+  color: navy;
+  text-align: center;
+}
+
+.headline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.headline_text {
+  margin-left: 3%;
+}
+
+.headline_img {
+  width: 30%;
+  margin-left: 2%;
+}
+
+.single_article_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single_article_img {
+  width: 80%;
+}
+
+.article_description {
+  width: 80%;
+  text-align: center;
 }
