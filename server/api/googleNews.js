@@ -1,7 +1,6 @@
 const router = require('express').Router()
 const NewsAPI = require('newsapi')
-const {newsAPIKey} = require('../../secrets')
-const newsapi = new NewsAPI(newsAPIKey)
+const newsapi = new NewsAPI(process.env.NEWS_API_KEY)
 module.exports = router
 
 router.get('/', async (req, res, next) => {
