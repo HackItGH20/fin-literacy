@@ -14,13 +14,23 @@ class NewsFeed extends React.Component {
     const articles = data.articles
     this.setState({articles})
   }
+  getDate(dateStr) {
+    let specificDate = dateStr.slice(6, 10)
+    let removedDash = specificDate[0] + specificDate.slice(2)
+    return parseInt(removedDash)
+  }
   render() {
     return (
-      <div>
-        <h2>News Feed:</h2>
-        {this.state.articles.map(article => (
-          <Headline article={article} key={article.id} />
-        ))}
+      <div className="news_list">
+        <h1 id="news_header">This Week's Financial News</h1>
+        {this.state.articles.length &&
+          this.state.articles
+            .map(article => <Headline article={article} key={article.id} />)
+            .sort(article => article.publishedAt)
+        //   (a, b) =>
+        //     this.getDate(b.publishedAt) - this.getDate(a.publishedAt)
+        // )
+        }
       </div>
     )
   }
