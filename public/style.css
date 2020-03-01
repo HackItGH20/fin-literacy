@@ -4,18 +4,69 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
-label {
+a:hover {
+  color: rgb(30, 114, 163);
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+}
+
+#main h1 {
+  align-self: center;
+  color: rgb(45, 143, 45);
+}
+
+#navbar {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  color: gray;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+#resource-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+}
+
+#list {
+  border: 1px solid blue;
+  width: 50%;
+}
+
+#expand {
+  align-self: center;
+  border: 1px solid red;
+  width: 50%;
+}
+
+#resource-link {
+  border-bottom: solid 5px #eee;
+  padding: 20px;
+  margin: 10px;
+}
+/* label {
   display: block;
-}
+} */
 
-nav a {
+/* nav a {
   display: inline-block;
   margin: 1em;
-}
+} */
 
-form div {
+/* form div {
   margin: 1em;
   display: inline-block;
-}
+} */
