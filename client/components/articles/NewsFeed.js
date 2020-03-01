@@ -16,11 +16,12 @@ class NewsFeed extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h2>News Feed:</h2>
-        {this.state.articles.map(article => (
-          <Headline article={article} key={article.id} />
-        ))}
+      <div className="news_list">
+        <h1 id="news_header">This Week's Financial News</h1>
+        {this.state.articles.length &&
+          this.state.articles.map(article => (
+            <Headline article={article} key={article.id} />
+          ))}
       </div>
     )
   }

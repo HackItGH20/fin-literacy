@@ -7,7 +7,8 @@ router.get('/', async (req, res, next) => {
   try {
     const finLiteracy = await newsapi.v2.everything({
       q: 'financial',
-      language: 'en'
+      language: 'en',
+      sortBy: 'latest'
     })
     res.json(finLiteracy)
   } catch (err) {
