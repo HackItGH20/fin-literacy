@@ -6,58 +6,18 @@ export class Resources extends React.Component {
   constructor() {
     super()
     this.state = {
-      resources: [
-        {
-          name: 'Guardian Life',
-          resourceUrl: 'https://www.guardianlife.com/',
-          personalFinance: true,
-          creditCards: false,
-          payingOffDebt: false,
-          investing: true,
-          saving: true,
-          studentLoans: false
-        },
-        {
-          name: 'Mint',
-          resourceUrl: 'https://www.mint.com/',
-          personalFinance: true,
-          creditCards: true,
-          payingOffDebt: true,
-          investing: false,
-          saving: false,
-          studentLoans: false
-        },
-        {
-          name: 'Credit Karma',
-          resourceUrl: 'https://www.creditkarma.com/',
-          personalFinance: true,
-          creditCards: true,
-          payingOffDebt: false,
-          investing: false,
-          saving: false,
-          studentLoans: false
-        },
-        {
-          name: 'Turbo Tax',
-          resourceUrl: 'https://turbo.intuit.com/',
-          personalFinance: true,
-          creditCards: false,
-          payingOffDebt: false,
-          investing: false,
-          saving: false,
-          studentLoans: false
-        }
-      ]
+      resources: []
     }
   }
 
-  // async componentDidMount() {
-  //   const allResources = await axios.get('/api/resources')
+  async componentDidMount() {
+    const allResources = await axios.get('/api/resources')
+    console.log(allResources)
 
-  //   this.setState({
-  //     resources: allResources
-  //   })
-  // }
+    this.setState({
+      resources: allResources.data
+    })
+  }
 
   render() {
     return (
@@ -70,12 +30,6 @@ export class Resources extends React.Component {
               </div>
             )
           })}
-          {/* <div id="resource-link">mint</div>
-
-          <div id="resource-link">doctor of credit</div>
-          <div id="resource-link">clarity</div>
-          <div id="resource-link">another</div>
-          <div id="resource-link">link</div> */}
         </div>
 
         <div id="expand">

@@ -6,6 +6,8 @@ const {User, Resource} = require('../server/db/models')
 const seedResources = [
   {
     name: 'Guardian Life',
+    description:
+      'Looking out for those you look after. Protecting your life, health and wealth. Everyone deserves a Guardian.',
     resourceUrl: 'https://www.guardianlife.com/',
     personalFinance: true,
     creditCards: false,
@@ -16,6 +18,7 @@ const seedResources = [
   },
   {
     name: 'Mint',
+    description: `Take charge of your finances with Mint's online budget planner. Our free budget tracker helps you understand your spending for a brighter financial future.`,
     resourceUrl: 'https://www.mint.com/',
     personalFinance: true,
     creditCards: true,
@@ -26,6 +29,8 @@ const seedResources = [
   },
   {
     name: 'Credit Karma',
+    description:
+      'Providing Easy-To-Read Credit Reports, Offering Personalized Score Insights.',
     resourceUrl: 'https://www.creditkarma.com/',
     personalFinance: true,
     creditCards: true,
@@ -36,6 +41,8 @@ const seedResources = [
   },
   {
     name: 'Turbo Tax',
+    description:
+      'TurboTax® is the #1 best-selling tax preparation software to file taxes online. Easily file federal and state income tax returns with 100% accuracy.',
     resourceUrl: 'https://turbo.intuit.com/',
     personalFinance: true,
     creditCards: false,
@@ -55,11 +62,6 @@ async function seed() {
       return Resource.create(resource)
     })
   )
-
-  // const users = await Promise.all([
-  //   User.create({email: 'cody@email.com', password: '123'}),
-  //   User.create({email: 'murphy@email.com', password: '123'})
-  // ])
 
   console.log(`seeded ${resources.length} resources`)
   console.log(`seeded successfully`)

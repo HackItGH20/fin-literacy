@@ -7,6 +7,10 @@ const Resource = db.define('resource', {
     unique: true,
     allowNull: false
   },
+  description: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
   resourceUrl: {
     type: Sequelize.STRING,
     allowNull: false
