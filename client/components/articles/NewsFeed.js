@@ -12,13 +12,17 @@ class NewsFeed extends React.Component {
     }
   }
   async componentDidMount() {
-    const {data} = await axios.get('/api/newsAPI' + this.state.topic)
+    const {data} = await axios.get('/api/newsAPI')
     const articles = data.articles
     this.setState({articles})
   }
 
-  setTopic = topic => {
+  setTopic = async topic => {
+    console.log("you're here with this topic: ", topic)
     this.setState({topic})
+    const {data} = await axios.get('/api/newsAPI/' + topic)
+    const articles = data.articles
+    this.setState({articles})
   }
 
   render() {
