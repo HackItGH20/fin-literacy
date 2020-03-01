@@ -13,7 +13,7 @@ class Headline extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="headline">
         {this.state.redirect && (
           <Redirect
             to={{
@@ -22,9 +22,13 @@ class Headline extends React.Component {
             }}
           />
         )}
-        <h3 onClick={() => this.changeView()}>{this.props.article.title}</h3>
-        <h3>{this.props.article.author}</h3>
-        <h3>{this.props.article.source.name}</h3>
+        <div className="headline_text">
+          <h3 onClick={() => this.changeView()}>{this.props.article.title}</h3>
+          {this.props.article.author && <h4>By {this.props.article.author}</h4>}
+          <h4>Source: {this.props.article.source.name}</h4>
+          <h4>Published on: {this.props.article.publishedAt.slice(0, 10)}</h4>
+        </div>
+        <img className="headline_img" src={this.props.article.urlToImage} />
       </div>
     )
   }

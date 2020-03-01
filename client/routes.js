@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome, NewsFeed, SingleArticle} from './components'
+import {Resources} from './components/resources'
 import {me} from './store'
 
 /**
@@ -22,6 +23,8 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route exact path="/articles/:id" component={SingleArticle} />
+        <Route exact path="/" component={NewsFeed} />
+        <Route exact path="/resources" component={Resources} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
@@ -29,7 +32,6 @@ class Routes extends Component {
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
-        <Route component={NewsFeed} />
       </Switch>
     )
   }
