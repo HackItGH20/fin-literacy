@@ -11,4 +11,14 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/:id', async (req, res, next) => {
+  try {
+    const resource = await Resource.findByPk(req.params.id)
+    if (!resource) res.sendStatus(500)
+    else res.json(resource)
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = router
