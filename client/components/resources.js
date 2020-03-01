@@ -1,35 +1,56 @@
 import React from 'react'
 import {Link, Route} from 'react-router-dom'
-import {ResourceExpanded} from './resourceExpanded'
+import axios from 'axios'
 
-export function Resources(props) {
-  return (
-    <div id="resource-container">
-      <div id="list">
-        <ul>
-          <div id="resource-link">mint</div>
+export class Resources extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      resources: []
+    }
+  }
+
+  async componentDidMount() {
+    const allResources = await axios.get('/api/resources')
+
+    this.setState({
+      resources: allResources
+    })
+  }
+
+  render() {
+    return (
+      <div id="resource-container">
+        <div id="list">
+          <ul>
+            {this.state.resources.map(resource => {
+              return <li key={resource.id}>{resource.name}</li>
+            })}
+            {/* <div id="resource-link">mint</div>
 
           <div id="resource-link">doctor of credit</div>
           <div id="resource-link">clarity</div>
           <div id="resource-link">another</div>
-          <div id="resource-link">link</div>
-        </ul>
-      </div>
+          <div id="resource-link">link</div> */}
+          </ul>
+        </div>
 
-      <div id="expand">
-        <p>
-          description description descriptiondescription description description
-          description description{' '}
-        </p>
-        <ul>
-          <li>mobile app</li>
-          <li>budget overview?</li>
-          <li>another thing</li>
-        </ul>
-        <a href="htpp://mint.com">link to go to website</a>
+        <div id="expand">
+          <p>
+            brief description brief description brief description brief
+            description brief description
+          </p>
+          <h4>why we love it:</h4>
+          <ul>
+            <li>mobile app</li>
+            <li>budget overview?</li>
+            <li>another thing</li>
+          </ul>
+          <a href="htpp://mint.com">link to go to website!!!</a>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 // export default Resources
