@@ -26,7 +26,7 @@ class NewsFeed extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="newsfeed_container">
         <SubNavBar setTopic={this.setTopic} />
         <div className="news_list">
           <h1 id="news_header">This Week's Financial News</h1>

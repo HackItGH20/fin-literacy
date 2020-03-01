@@ -69,6 +69,26 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 1%;
+  background-color: whitesmoke;
+  padding: 5px;
+}
+
+.category_button {
+  border-radius: 12px;
+  padding: 5px;
+  background-color: rgb(45, 143, 45);
+  color: white;
+}
+
+.category_button:hover {
+  background-color: darkgreen;
+}
+
+#newsfeed_container {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: whitesmoke;
 }
 
 #news_header {
@@ -87,6 +107,10 @@ p {
 
 .headline_text {
   margin-left: 3%;
+}
+
+.headline_title:hover {
+  color: navy;
 }
 
 .headline_img {
