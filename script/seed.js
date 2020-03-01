@@ -1,18 +1,67 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Resource} = require('../server/db/models')
+
+const seedResources = [
+  {
+    name: 'Guardian Life',
+    resourceUrl: 'https://www.guardianlife.com/',
+    personalFinance: true,
+    creditCards: false,
+    payingOffDebt: false,
+    investing: true,
+    saving: true,
+    studentLoans: false
+  },
+  {
+    name: 'Mint',
+    resourceUrl: 'https://www.mint.com/',
+    personalFinance: true,
+    creditCards: true,
+    payingOffDebt: true,
+    investing: false,
+    saving: false,
+    studentLoans: false
+  },
+  {
+    name: 'Credit Karma',
+    resourceUrl: 'https://www.creditkarma.com/',
+    personalFinance: true,
+    creditCards: true,
+    payingOffDebt: false,
+    investing: false,
+    saving: false,
+    studentLoans: false
+  },
+  {
+    name: 'Turbo Tax',
+    resourceUrl: 'https://turbo.intuit.com/',
+    personalFinance: true,
+    creditCards: false,
+    payingOffDebt: false,
+    investing: false,
+    saving: false,
+    studentLoans: false
+  }
+]
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
-  ])
+  const resources = await Promise.all(
+    seedResources.map(resource => {
+      return Resource.create(resource)
+    })
+  )
 
-  console.log(`seeded ${users.length} users`)
+  // const users = await Promise.all([
+  //   User.create({email: 'cody@email.com', password: '123'}),
+  //   User.create({email: 'murphy@email.com', password: '123'})
+  // ])
+
+  console.log(`seeded ${resources.length} resources`)
   console.log(`seeded successfully`)
 }
 
