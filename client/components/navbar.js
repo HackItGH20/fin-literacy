@@ -7,6 +7,7 @@ import React from 'react'
 function Navbar(props) {
   return (
     <div>
+      <navbar>hi</navbar>
       <h1>nav</h1>
     </div>
   )
