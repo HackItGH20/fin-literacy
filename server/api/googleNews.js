@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const NewsAPI = require('newsapi')
-const {newsAPIKey} = require('../../secrets')
 const newsapi = new NewsAPI(process.env.NEWS_API_KEY)
 module.exports = router
 
@@ -10,7 +9,6 @@ router.get('/', async (req, res, next) => {
       q: 'financial',
       language: 'en'
     })
-    console.log('api call results', finLiteracy)
     res.json(finLiteracy)
   } catch (err) {
     next(err)
